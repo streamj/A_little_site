@@ -11,23 +11,29 @@
 
             <nav class="navbar navbar-default" role="navigation">
                 <a class="navbar-brand" href="/">Superlists</a>
+                {% if user.email %}
+                <a class="btn navbar-btn navbar-right" id="id_logout" href="#">Logout</a>
+                <span class="navbar-text navbar-right">Logged in as {{ user.email }}</span>
+                {% else %}
                 <a class="btn navbar-btn navbar-right" id="id_login" href="#">Sign in</a>
+                {% endif %}
             </nav>
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 jumbotron">
                     <div class="text-center">
-        <h1>{% block header_text %}{% endblock %}</h1>
+                        <h1>{% block header_text %}{% endblock %}</h1>
 
-        <form method="POST" action="{% block form_action %}{% endblock %}">
-            {{ form.text }}
-            {% csrf_token %}
-            {% if form.errors %}
-            <div class="form-group has-error">
-                <div class="help-block">{{ form.text.errors }}</div>
-            </div>
-            {% endif %}
-        </form>
+                        <form method="POST" action="{% block form_action %}{% endblock %}">
+                            {{ form.text }}
+                            {% csrf_token %}
+                            {% if form.errors %}
+                            <div class="form-group has-error">
+                                <div class="help-block">
+                                    {{ form.text.errors }}</div>
+                            </div>
+                            {% endif %}
+                        </form>
                     </div>
                 </div>
             </div>
@@ -40,6 +46,19 @@
             </div>
         </div>
         <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="https://login.persona.org/include.js"></script>
         <script src="/static/list.js"></script>
+        <script src="/static/accounts.js"></script>
+        <script>
+         $(document).ready(function() {
+             var user = "{{ user.email }}" || null
+             var token = "{{ csrf_token }}"
+             var urls = {
+                 login: "{% url 'persona_login' %}",
+                 logout: "TODO",
+             };
+             Superlists.Accounts.initialize(navigator, user, token, urls);
+         })
+        </script>
     </body>
 </html>

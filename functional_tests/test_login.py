@@ -12,7 +12,8 @@ class LoginTest(FunctionalTest):
 
         self.switch_to_new_window('Mozilla Persona')
 
-        self.browser.find_element_by_id('authentication_email').send_keys('edith@mockmyid.com')
+        self.browser.find_element_by_id(
+            'authentication_email').send_keys('edith@mockmyid.com')
         self.browser.find_element_by_tag_name('button').click()
 
         self.switch_to_new_window('To-Do')
@@ -34,6 +35,6 @@ class LoginTest(FunctionalTest):
 
     def wait_for_element_with_id(self, element_id):
         # probably need set a bigger timeout
-        WebDriverWait(self.browser, timeout=30).until(
+        WebDriverWait(self.browser, timeout=300).until(
             lambda b: b.find_element_by_id(element_id)
         )
