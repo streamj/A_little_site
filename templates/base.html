@@ -11,7 +11,7 @@
 
             <nav class="navbar navbar-default" role="navigation">
 
-                <a class="navbar-brand" href="/">Superlists</a>
+                <a class="navbar-brand" href="/">Home</a>
                 {% if user.email %}
                 <a class="btn navbar-btn navbar-right" id="id_logout" href="{% url 'logout' %}">Logout</a>
                 <span class="navbar-text navbar-right">Logged in as {{ user.email }}</span>
@@ -56,5 +56,6 @@
         </div>
         <script src="http://code.jquery.com/jquery.min.js"></script>
         <script src="/static/list.js"></script>
+        <script src="/static/foo.js"></script>
     </body>
 </html>
