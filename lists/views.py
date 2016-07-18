@@ -6,8 +6,8 @@ from lists.forms import ItemForm, ExistingListItemForm
 
 # Create your views here.
 
-def home_page(request):
-    return render(request, 'home.html', {'form': ItemForm()})
+def list_home(request):
+    return render(request, 'list_home.html', {'form': ItemForm()})
 
 def view_list(request, list_id):
     list_ = List.objects.get(id=list_id)
@@ -27,4 +27,4 @@ def new_list(request):
         form.save(for_list=list_)
         return redirect(list_)
     else:
-        return render(request, 'home.html', {"form": form})
+        return render(request, 'list_home.html', {"form": form})

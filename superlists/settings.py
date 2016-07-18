@@ -19,11 +19,11 @@ BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 SECRET_KEY = '_0=b%0)=yr_mp+kbh5c*rz$!sqj!3#x6q&)%l*b^#bd2*hhq!$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = False
 
-DOMAIN = "www.freecloudfx.cc"
+DOMAIN = "localhost"
 
 ALLOWED_HOSTS = [DOMAIN]
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'lists',
     'accounts',
     'functional_tests',
+    'blog',
 )
 
 AUTH_USER_MODEL = 'accounts.User'
