@@ -23,7 +23,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-DOMAIN = "www.freecloudfx.cc"
+DOMAIN = "localhost"
 
 ALLOWED_HOSTS = [DOMAIN]
 
@@ -96,5 +96,3 @@ STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'superlists', 'static'),
 )
-
-from .secret_key import SECRET_KEY
