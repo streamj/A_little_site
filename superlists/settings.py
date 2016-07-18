@@ -41,14 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lists',
-    'accounts',
     'functional_tests',
     'blog',
-)
-
-AUTH_USER_MODEL = 'accounts.User'
-AUTHENTICATION_BACKENDS = (
-    'accounts.authentication.PersonaAuthenticationBackend',
 )
 
 
