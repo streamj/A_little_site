@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 # id_text {
   margin-top: 2ex;
 }
@@ -23,4 +28,41 @@ from.little_search {
   width: 200px;
   margin: 5px;
   padding: 5px;
+}
+
+.home_nav {
+  margin: 50px;
+  width: 200px;
+}
+
+.home_nav header {
+  padding: 1px;
+  margin: 5px;
+}
+
+.home_nav ul {
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 5px 10px 3px;
+}
+
+.home_nav li {
+  list-style-type: none;
+}
+
+.home_nav li + li a {
+  border-top: 1px solid gray;
+}
+
+.home_nav a {
+  text-decoration: none;
+  font: 20px arial, helvetica, sans-serif;
+  font-weight: 400;
+  color: #000;
+  display: block;
+  padding: 3px 10px;
+}
+
+.home_nav a:hover {
+  color: #069;
 }
