@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [DOMAIN]
 # Application definition
 
 INSTALLED_APPS = (
-#    'django.contrib.admin',
+    'bootstrap_admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -44,7 +45,12 @@ INSTALLED_APPS = (
     'functional_tests',
     'blog',
 )
+# from django.conf import global_settings
+# TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS
+# ('django.core.context_processors.request',)
 
+
+# BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

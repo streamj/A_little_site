@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>To-Do lists</title>
+        <title>A Little Site</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="/static/base.css" rel="stylesheet" media="screen">
@@ -12,12 +12,7 @@
             <nav class="navbar navbar-default" role="navigation">
 
                 <a class="navbar-brand" href="/">Home</a>
-                {% if user.email %}
-                <a class="btn navbar-btn navbar-right" id="id_logout" href="{% url 'logout' %}">Logout</a>
-                <span class="navbar-text navbar-right">Logged in as {{ user.email }}</span>
-                {% else %}
                 <a class="btn navbar-btn navbar-right" id="id_login" href="#">Sign in</a>
-                {% endif %}
 
             </nav>
 
