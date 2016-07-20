@@ -298,9 +298,8 @@ class PostViewTest(LiveServerTestCase):
         post_url = only_post.get_absolute_url()
         print(post_url)
 
-        print('/blog%s' % post_url)
         # Fetch the post
-        response = self.client.get('/blog%s' % post_url)
+        response = self.client.get(post_url)
         self.assertEquals(response.status_code, 200)
 
         # Check the post title is in the response

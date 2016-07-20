@@ -11,7 +11,7 @@ class Post(models.Model):
     author = models.ForeignKey(User)
 
     def get_absolute_url(self):
-        return "/%s/%s/%s/" % (self.pub_date.year,
+        return "/blog/%s/%s/%s/" % (self.pub_date.year,
                                self.pub_date.month,
                                self.slug)
 
