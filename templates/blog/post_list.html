@@ -10,5 +10,13 @@
         <h3>{{ post.pub_date }}</h3>
         {{post.text|custom_markdown}}
 </div>
-        {% endfor %}
+{% endfor %}
+
+{% if page_obj.has_previous %}
+<a href="/blog/{{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+{% if page_obj.has_next %}
+<a href="/blog/{{ page_obj.next_page_number }}">Next</a>
+{% endif %}
+
 {% endblock %}
