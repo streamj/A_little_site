@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'lists',
     'functional_tests',
     'blog',
+#    'south',
 )
 # from django.conf import global_settings
 # TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS
