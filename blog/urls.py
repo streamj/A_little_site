@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include , url
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from blog.models import Post
 
 urlpatterns = patterns('',
@@ -8,6 +8,6 @@ urlpatterns = patterns('',
         model=Post,
         paginate_by=5,
     )),
-    # match \d+ to id
-    # url(r'^(?P<id>\d+)/$', 'blog.views.detail', name='detail'),
+    # individual posts
+    url(r'^(?P<pub_date__year>\d{4})/(?P<pub_date__month>\d{1,2})/(?P<slug>[a-zA-Z0-9-]+)/?$', DetailView.as_view(model=Post,))
 )
