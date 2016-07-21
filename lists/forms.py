@@ -1,10 +1,28 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.contrib.auth.forms import UserCreationForm
 from lists.models import Item
 
 
 EMPTY_LIST_ERROR = "You can't have an empty list item"
 DUPLICATE_ITEM_ERROR = "You've already got this in your list"
+
+
+class RegisterForm(UserCreationForm):
+
+    email = forms.EmailField(
+        required=True, widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+    username = forms.CharField(
+        widget = forms.TextInput(attrs={'class': 'form-control'})
+    )
+    password1 = forms.CharField(
+        widget = forms.TextInput(attrs={'class': 'form-control', 'type': 'password'})
+    )
+    password2 = forms.CharField(
+        widget = forms.TextInput(attrs={'class': 'form-control', 'type': 'password'})
+    )
+
 
 class ItemForm(forms.models.ModelForm):
 
