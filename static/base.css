@@ -3,19 +3,19 @@
   padding: 0;
 }
 
-# id_text {
+#id_text {
   margin-top: 2ex;
 }
 
 form.little_search {
-  float: right:
+  float:left;
   width: 70px;
-  padding: 2px 0 3px 5px;
+  padding: 20px 50px 10px 10px;
   outline: none;
   font-size: .8em;
   border-color: #eee #ccc #ccc #eee;
   border-radius: 10px;
-  -webkit-transition: 2s width:
+  -webkit-transition: 2s width;
 }
 
 form.little_search input:focus {

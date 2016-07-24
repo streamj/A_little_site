@@ -1,14 +1,13 @@
 from django.contrib import admin
-from django.contrib.auth.models import User
 from blog.models import Post
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
+    list_dispaly = ('title', 'slug', 'author', 'publish', 'status')
+    list_filter = ('status', 'created', 'publish', 'author')
+    raw_id_fields = ('author',)
     prepopulated_fields = {"slug": ("title",)}
-    exclude = ('author',)
-
-    def save_model(self, request, obj, form, change):
-        obj.author = request.user
-        obj.save()
+    date_hierarchy='publish'
+    orderng = ['status', 'publish']
 
 admin.site.register(Post, PostAdmin)
