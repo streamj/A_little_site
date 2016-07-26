@@ -6,7 +6,6 @@
 
 {% block content %}
 
-
 <h4 class="blog-post-title">{{ post.title }}</h4>
 <p class="date">
     Published {{ post.publish }} by {{ post.author }}</p>
@@ -54,11 +53,15 @@
 <hr>
 
 <h4 class="blog-post-meta">Add a new comment</h4>
-<form action="." method="post">
+<form class="form-horizontal" action="." method="post">
+    <fieldset>
+    <div class="control-group">
     {{ comment_form.as_p }}
     {% csrf_token %}
     <p><input type="submit" value="Add comment">
     </p>
+    </div>
+    </fieldset>
 </form>
 
 {% endif %}
