@@ -105,7 +105,7 @@ STATICFILES_DIRS = (
     STATIC_PATH,
 )
 from .secret_key import SECRET_KEY
-from .password import PASSWORD
+#from .password import PASSWORD
 
 EMAIL_HOST = 'smtp.tom.com'
 EMAIL_HOST_USER = 'ttloda@tom.com'
