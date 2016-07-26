@@ -41,7 +41,7 @@ def _update_settings(source_folder, site_name):
         append(secret_key_file, "SECRET_KEY = '%s' " % (key,))
     append(settings_path, '\nfrom .secret_key import SECRET_KEY')
     user_home = '/home/%s' % env.user
-    run('cd % && cp %s/password.py .' % (source_folder, user_home))
+    run('cd %s/superlists/ && cp %s/password.py .' % (source_folder, user_home))
 
 def _update_virtualenv(source_folder):
     virtualenv_folder = source_folder + '/../virtualenv'
