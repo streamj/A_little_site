@@ -1,5 +1,8 @@
-bootstrap-admin==0.3.6
 Django==1.7
+django-haystack==2.4.0
+django-taggit==0.17.1
 gunicorn==19.6.0
+Markdown==2.6.6
+pysolr==3.3.3
 pytz==2016.6.1
 requests==2.10.0

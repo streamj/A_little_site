@@ -33,6 +33,8 @@ ALLOWED_HOSTS = [DOMAIN]
 
 # Application definition
 
+SITE_ID = 1
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,14 +45,16 @@ INSTALLED_APPS = (
     'lists',
     'functional_tests',
     'blog',
+    'taggit',
+    'haystack',
 )
 
-# from django.conf import global_settings
-# TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS
-# ('django.core.context_processors.request',)
-
-
-# BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE':'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr/blog'
+    },
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -101,3 +105,10 @@ STATICFILES_DIRS = (
     STATIC_PATH,
 )
 from .secret_key import SECRET_KEY
+from .password import PASSWORD
+
+EMAIL_HOST = 'smtp.tom.com'
+EMAIL_HOST_USER = 'ttloda@tom.com'
+EMAIL_HOST_PASSWORD = PASSWORD
+EMAIL_PORT = 25
+# EMAIL_USE_TLS = True

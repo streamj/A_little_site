@@ -1,0 +1,40 @@
+{% extends "blog/includes/base.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+
+{% if show_results %} {# just can use `if 'query' in request.GET` to determine #}
+
+    <h2 class="blog-post-meta">Post containing "{{ cd.query }}"</h1>
+    <h3 class="blog-post-meta">Found {{ total_results }} result{{ total_results|pluralize }} :</h3>
+
+    <hr>
+
+    {% for result in results %}
+
+        {% with post=result.object %}
+            <h4 class="blog-post-meta"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+
+            {{ post.body|truncatewords:5 }}
+
+        {% endwith %}
+
+    {% empty %}
+    <p>There are no results for your query</p>
+
+    {% endfor %}
+
+    <p><a href="{% url "blog:post_search" %}">Search again</a></p>
+
+{% else %}
+    <h2 class="blog-post-title">Search for posts</h2>
+    <hr>
+         <form action="." method="get">
+             {{ form.as_p }}
+             <input type="submit" value="Search">
+        </form>
+
+{% endif %}
+
+{% endblock %}
