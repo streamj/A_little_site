@@ -1,6 +1,6 @@
 A blog built on Django
 ======================
-# A single user blog
+### A single user blog
 
 * use python3
 * it is recommended use a virtual environment
