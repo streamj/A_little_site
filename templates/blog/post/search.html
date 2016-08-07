@@ -27,13 +27,18 @@
 
     <p><a href="{% url "blog:post_search" %}">Search again</a></p>
 
-{% else %}
+    {% else %}
     <h2 class="blog-post-title">Search for posts</h2>
     <hr>
-         <form action="." method="get">
+    <form class="form-horizontal" action="." method="get">
+        <fieldset>
+            <div class="control-group">
              {{ form.as_p }}
-             <input type="submit" value="Search">
-        </form>
+                <input type="submit" value="Search">
+            </div>
+        </fieldset>
+    </form>
+
 
 {% endif %}
 
