@@ -1,4 +1,4 @@
-A blog built on Django
+A blog built with Django
 ======================
 ### A single user blog
 
